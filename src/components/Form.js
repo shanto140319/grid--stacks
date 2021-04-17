@@ -5,7 +5,7 @@ import { AiFillRightCircle } from 'react-icons/ai';
 const Form = () => {
   return (
     <Wrapper>
-      <form noValidate autoComplete='off'>
+      <form noValidate autoComplete='off' onClick={(e) => e.preventDefault()}>
         <label htmlFor='company'>About company*</label>
         <textarea
           required
@@ -79,7 +79,8 @@ const Wrapper = styled.div`
   label {
     display: block;
     margin-bottom: 0.3rem;
-    font-size: 14px;
+    font-size: 18px;
+    font-family: 'Crimson Pro', serif;
   }
   #company {
     height: 100px;
@@ -87,7 +88,7 @@ const Wrapper = styled.div`
     padding: 1rem;
     filter: drop-shadow(2.828px 2.828px 3px rgba(0, 0, 0, 0.16));
     border-radius: 5px;
-    border-color: var(--clr-grey-7);
+    border: 1px solid #707070;
   }
   .grid {
     margin-top: 1rem;
@@ -101,11 +102,11 @@ const Wrapper = styled.div`
   input,
   select {
     width: 100%;
-    height: 50px;
+    height: 58px;
     border-radius: 4px;
     filter: drop-shadow(2.828px 2.828px 3px rgba(0, 0, 0, 0.16));
     background-color: #ffffff;
-    border: 1px solid var(--clr-grey-7);
+    border: 1px solid #707070;
     padding: 0.5rem 1rem;
   }
   .specialties {

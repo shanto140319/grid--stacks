@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { data } from '../benifitsData';
+import ModalBenifitsMiddle from './ModalBenifitsMiddle';
 import Modalbtns from './Modalbtns';
+
 const Modal = ({ setModal }) => {
   return (
     <Wrapper>
@@ -17,16 +19,15 @@ const Modal = ({ setModal }) => {
           </div>
         </div>
 
-        {/* buttons */}
-        {/* save button  */}
-        <button className='btn'>save</button>
+        {/* //middle benifits  */}
+        <ModalBenifitsMiddle />
 
         {/* last buttons */}
         <div className='btn-container'>
           <button className='btn' onClick={() => setModal(false)}>
             back
           </button>
-          <button className='btn'>save</button>
+          <button className='btn save-btn'>save</button>
         </div>
       </div>
     </Wrapper>
@@ -35,7 +36,7 @@ const Modal = ({ setModal }) => {
 const Wrapper = styled.div`
   position: fixed;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -43,19 +44,26 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  overflow-y: scroll;
   .modal {
     padding: 1rem 0.5rem;
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 50%;
-    transform: translate(-50%, -40%);
-    width: 55%;
-    height: 90%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
     background-color: #fff;
     z-index: 99999999;
+    overflow-y: scroll;
+
     @media (max-width: 900px) {
-      width: 75%;
+      width: 95%;
+      top: 100%;
+    }
+    @media (max-width: 400px) {
+      width: 90%;
+      top: 120%;
     }
   }
   header {
@@ -65,7 +73,7 @@ const Wrapper = styled.div`
   }
   .modal-upper {
     margin: 1rem 0;
-    background-color: var(--clr-grey-10);
+    background-color: #f7f7f7;
     padding: 0.8rem;
   }
   .modal-upper p {
@@ -80,11 +88,12 @@ const Wrapper = styled.div`
     margin-top: 1rem;
   }
   .btn-container {
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
     gap: 1rem !important;
     justify-content: flex-end;
+  }
+  .btn {
+    height: 46px;
+    padding: 0 2rem;
   }
 `;
 export default Modal;

@@ -30,14 +30,14 @@ const Wrapper = styled.div`
     justify-content: space-between;
     width: 250px;
     background-color: transparent;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 99px;
     border: 1px solid #c1c1c1;
     cursor: pointer;
   }
   .btn-benifit svg {
-    width: 20px;
-    height: 20px;
+    font-size: 25px;
+    color: #c7c7c7;
   }
   span {
     display: flex;
@@ -50,6 +50,9 @@ const Wrapper = styled.div`
   }
   .active {
     background-color: #f77631;
+    color: #fff;
+  }
+  .active svg {
     color: #fff;
   }
 `;
